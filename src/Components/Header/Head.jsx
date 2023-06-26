@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "./logo.png";
 import { useAuth } from "../Auth/Auth";
 import { Toaster, toast } from "react-hot-toast";
@@ -79,6 +79,11 @@ const Head = () => {
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 
+                <NavLink style={{color:"orange", }}><b>{(auth.user.name).toUpperCase()} </b></NavLink>
+                <div>&nbsp;</div>
+                <div>&nbsp;</div>
+
+
               <div className="dropdown">
                 <button
                   className="nav-link dropdown-toggl"
@@ -93,15 +98,15 @@ const Head = () => {
                     src="assets/img/testimonials/testimonials-2.jpg"
                     alt="..."
                   />
-                </button>
+                  </button>
                 <div style={{ textAlign: "center",marginRight:"70px" }} className="dropdown-menu">
-                  <a className="dropdown-item" aria-labelledby="dropdownMenuButton" href="userdetail">
+                  <Link to={"/userdashboard"} className="dropdown-item" aria-labelledby="dropdownMenuButton" href="userdetail">
                     {(auth.user.name).toUpperCase()}
-                  </a>
+                  </Link>
                   <a
                       style={{ color: "gray", }}
                     className="dropdown-item"
-                    href="#"
+                    href="/userdashboard"
                   >
                     {auth.user.email}
                   </a>

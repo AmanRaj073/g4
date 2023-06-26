@@ -115,55 +115,55 @@ console.log("Intial Value",intialvlaue);
               <div className="sidebar-item categories">
                 <br />
 
-                <li>
-                  <button
+                
+                  <div
                     onClick={() => setnewsQuery("all")}
-                    className="btn btn-success"
+                    className=""
                   >
                     All<span> ({alldata.length})</span>
-                  </button>
-                </li>
+                  </div>
+                
 
                 <br />
 
-                <li>
-                  <button
+                
+                  <div
                     onClick={() => setnewsQuery("bitcoin")}
-                    className="btn btn-warning"
+                    className=""
                   >
                     Bitcoin <span> ({alldata.length})</span>
-                  </button>
-                </li>
+                  </div>
+                
                 <br />
 
-                <li>
-                  <button
+                
+                  <div
                     onClick={() => setnewsQuery("health")}
-                    className="btn btn-info"
+                    className=""
                   >
                     Health <span> ({alldata.length})</span>
-                  </button>
-                </li>
+                  </div>
+                
                 <br />
 
-                <li>
-                  <button
+                
+                  <div
                     onClick={() => setnewsQuery("bank")}
-                    className="btn btn-danger"
+                    className=""
                   >
                     Bank <span> ({alldata.length})</span>
-                  </button>
-                </li>
+                  </div>
+                
                 <br />
 
-                <li>
-                  <button
+                
+                  <div
                     onClick={() => setnewsQuery("tech")}
-                    className="btn btn-dark"
+                    className=""
                   >
                     Tech <span> ({alldata.length})</span>
-                  </button>
-                </li>
+                  </div>
+                
                 <br />
               </div>
             </div>

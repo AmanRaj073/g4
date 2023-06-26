@@ -10,6 +10,7 @@ import Login from "./Components/Auth/Login";
 import Register from "./Components/Auth/Register";
 import ResetPas from "./Components/Auth/ResetPass";
 import Blog from "./Components/Pages/Blog";
+import UserDashboard from "./Components/Pages/UserDashboard";
 function App() {
   function PrivateRoute({ children }) {
     const token =
@@ -61,6 +62,10 @@ function App() {
     {
       path: "/contact",
       element: <Contact />,
+    },
+    {
+      path: "/userdashboard",
+      element: <UserDashboard/>,
     },
   ];
   return (
