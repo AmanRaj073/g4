@@ -3,7 +3,7 @@ import Common from "./Common";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import "./blog.css";
 import BlogSkeleton from "./BlogSkeleton";
 
@@ -38,7 +38,7 @@ const Blog = () => {
   };
   //--------------------- News Api ----------------------------
 
-  const apikey = "2167b4932606496a9ef76749a37419f8";
+  const apikey = "261cc7435fcc4f6aa0a4b95ae87ed449";
   const apiUrl =
     "https://newsapi.org/v2/everything?q=" +
     newsQuery +
@@ -100,7 +100,7 @@ console.log("Intial Value",intialvlaue);
                 type="button"
                 className="btn btn-primary"
               >
-                <i class="bx bx-search"></i>
+                <i className="bx bx-search"></i>
               </button>
             </div>
           </div>
@@ -116,54 +116,60 @@ console.log("Intial Value",intialvlaue);
                 <br />
 
                 
-                  <div
+                  <NavLink style={{fontSize:"20px",color:"blue"}} 
                     onClick={() => setnewsQuery("all")}
                     className=""
                   >
-                    All<span> ({alldata.length})</span>
-                  </div>
+                    <b>All</b><span> ({alldata.length})</span>
+                  </NavLink>
                 
 
+
+                <br />
                 <br />
 
                 
-                  <div
+                  <NavLink style={{fontSize:"20px"}}
                     onClick={() => setnewsQuery("bitcoin")}
                     className=""
                   >
                     Bitcoin <span> ({alldata.length})</span>
-                  </div>
+                  </NavLink>
                 
+                <br />
                 <br />
 
                 
-                  <div
+                  <NavLink style={{fontSize:"20px"}}
                     onClick={() => setnewsQuery("health")}
                     className=""
                   >
                     Health <span> ({alldata.length})</span>
-                  </div>
+                  </NavLink>
                 
+                <br />
                 <br />
 
                 
-                  <div
+                  <NavLink style={{fontSize:"20px"}}
                     onClick={() => setnewsQuery("bank")}
                     className=""
                   >
                     Bank <span> ({alldata.length})</span>
-                  </div>
+                  </NavLink>
                 
+                <br />
                 <br />
 
                 
-                  <div
+                  <NavLink style={{fontSize:"20px"}}
                     onClick={() => setnewsQuery("tech")}
                     className=""
                   >
                     Tech <span> ({alldata.length})</span>
-                  </div>
+                  </NavLink>
                 
+                <br />
                 <br />
               </div>
             </div>
@@ -233,7 +239,7 @@ console.log("Intial Value",intialvlaue);
         </div>
       </div>
         {/* //------------End Side Bar -------------- */ }
-        
+      {loading ? <BlogSkeleton /> : <>
       <section id="courses" className="courses">
         <div className="container" data-aos="fade-up">
           <div className="row" data-aos="zoom-in" data-aos-delay={100}>
@@ -260,7 +266,7 @@ console.log("Intial Value",intialvlaue);
                           <p className="">{item?.publishedAt}</p>
                         </div>
                         <h3>
-                          <Link to={"/blog-details"}>
+                          <Link to={"/blog-details"} target="_blank">
                             {(item?.title).substring(0, 30)}
                           </Link>
                         </h3>
@@ -268,6 +274,7 @@ console.log("Intial Value",intialvlaue);
                         <div className="trainer d-flex justify-content-between align-items-center">
                           <div className="trainer-profile d-flex align-items-center">
                             <img
+                              target="_blank"
                               src={imgProfile[index]?.avatar_url}
                               onError={"https://random.imagecdn.app/500/150"}
                               className="img-fluid"
@@ -276,7 +283,7 @@ console.log("Intial Value",intialvlaue);
 
                             <span>{item?.author || "Genuine"}</span>
                           </div>
-                          <Link to={""}>
+                          <Link to={item?.url} target="_blank">
                             {" "}
                             <button
                               style={{
@@ -285,7 +292,7 @@ console.log("Intial Value",intialvlaue);
                                 fontSize: "15px",
                               }}
                               type="button"
-                              class="btn btn-primary btn-rounded btn-sm"
+                              className="btn btn-primary btn-rounded btn-sm"
                             >
                               Read More
                             </button>
@@ -304,6 +311,8 @@ console.log("Intial Value",intialvlaue);
         </section>
       <button onClick={() =>setIntialvlaue(intialvlaue+4)} style={{marginLeft:"380px",boxShadow:" 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)",width:"233px"}} type="buttonn" class="btn btn-danger btn-rounded">Load More</button>
       <br/>
+      </>}  
+     
 
     </>
   );

@@ -40,20 +40,20 @@ const Home = () => {
           </div>
           <div className="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
 {
-  title.map((item,index)=>{
+  title?.map((item,index)=>{
     return(
       <>
-      <h3>{item.title}</h3>
+      <h3>{item?.title}</h3>
         <p className="fst-italic">
-          {item.description}
+          {item?.description}
         </p>
         <ul>
-          <li><i className="bi bi-check-circle" /> {item.feature1}</li>
-          <li><i className="bi bi-check-circle" /> {item.feature2}</li>
-          <li><i className="bi bi-check-circle" /> {item.feature3}</li>
+          <li><i className="bi bi-check-circle" /> {item?.feature1}</li>
+          <li><i className="bi bi-check-circle" /> {item?.feature2}</li>
+          <li><i className="bi bi-check-circle" /> {item?.feature3}</li>
         </ul>
         <p>
-          {item.conclusion}
+          {item?.conclusion}
         </p>
       </>
     )

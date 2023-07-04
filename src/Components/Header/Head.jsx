@@ -79,7 +79,8 @@ const Head = () => {
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
                 
-                <NavLink style={{color:"orange", }}><b>{(auth.user.name).toUpperCase()} </b></NavLink>
+                <NavLink style={{
+                  color: "red",textShadow:"2px 2px 12px " }}><b>{(auth.user.name).toUpperCase()} </b></NavLink>
                 <div>&nbsp;</div>
                 <div>&nbsp;</div>
 
